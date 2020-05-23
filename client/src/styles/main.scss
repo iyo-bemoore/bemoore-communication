@@ -1,0 +1,86 @@
+@import "./_base";
+@import "./_variables.scss";
+input[type="text"] {
+  box-sizing: border-box;
+}
+#root {
+  height: 95vh;
+  background-image: url(../images/shattered-island.gif);
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+}
+.join {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 50%;
+  background-color: $color-soft-white;
+  -webkit-box-shadow: 0px 2px 18px 1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 2px 18px 1px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 2px 18px 1px rgba(0, 0, 0, 0.52);
+  &__header {
+    line-height: 1.7em;
+    font-size: 1.3rem;
+    margin: 0;
+    &-company {
+      display: block;
+
+      color: $color-soft-red;
+      padding: 0.5rem;
+    }
+    &-welcome {
+      display: block;
+      padding: 0.5rem;
+      color: $color-soft-grey;
+    }
+  }
+  &__box {
+    width: 100%;
+    &__input {
+      padding: 0.6rem;
+      &-name,
+      &-room {
+        padding: 0.9rem;
+        &--holder {
+          padding: 0.9rem;
+          font-size: 1rem;
+          color: $color-soft-grey;
+          width: 100%;
+          &:focus {
+            outline: red;
+          }
+        }
+      }
+    }
+    &__submit {
+      padding: 0.4rem;
+      &-button {
+        padding: 0.6rem;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: $color-darl-red;
+        color: $color-soft-white;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: $color-dark-grey;
+        }
+        &:disabled {
+          background-color: $color-soft-grey;
+        }
+      }
+    }
+  }
+}
