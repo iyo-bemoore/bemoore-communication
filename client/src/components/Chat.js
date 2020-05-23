@@ -23,7 +23,7 @@ const Chat = ({ location }) => {
       console.log("hook fired");
     };
   }, [location.search]);
-  return <h1> Chat </h1>;
+  return <h1> Chat function </h1>;
 };
 
 export default Chat;
