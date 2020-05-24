@@ -3,15 +3,21 @@
 input[type="text"] {
   box-sizing: border-box;
 }
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
 #root {
-  height: 95vh;
+  height: 100vh;
   background-image: url(../images/shattered-island.gif);
   font-family: "Montserrat", sans-serif;
 }
 
 .container {
   display: flex;
-  height: 95vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -32,7 +38,6 @@ input[type="text"] {
     margin: 0;
     &-company {
       display: block;
-
       color: $color-soft-red;
       padding: 0.5rem;
     }
@@ -81,6 +86,159 @@ input[type="text"] {
           background-color: $color-soft-grey;
         }
       }
+    }
+  }
+}
+.chat {
+  display: flex;
+  &__sidebar {
+    height: 100vh;
+    color: $color-soft-white;
+    background: $color-dark-grey;
+    width: 15vw;
+    min-width: 15vw;
+    overflow-x: scroll;
+    overflow: hidden;
+
+    &-container {
+      display: flex;
+      background: $color-soft-grey;
+      justify-content: space-between;
+      -webkit-box-shadow: -1px 2px 5px -2px rgba(0, 0, 0, 0.69);
+      -moz-box-shadow: -1px 2px 5px -2px rgba(0, 0, 0, 0.69);
+      box-shadow: -1px 2px 5px -2px rgba(0, 0, 0, 0.69);
+      &--room {
+        text-align: center;
+        font-size: 22px;
+        padding: 1.2rem;
+      }
+      &--img {
+        background-image: url(../images/comment.svg);
+        background-size: 3rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 70%;
+        max-width: 70%;
+      }
+    }
+    &-members {
+      padding: 6px 12px 6px 12px;
+      border-bottom: 1px solid $color-soft-white;
+      &-title {
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+    }
+    &__users {
+      list-style-type: none;
+      font-weight: 300;
+      padding: 12px 24px 12px 24px;
+      &--user {
+        margin: 0.7rem 0rem;
+        padding: 0.3rem;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        &-item {
+          display: flex;
+          justify-content: space-between;
+        }
+        &-icon {
+          width: 35px;
+          height: auto;
+          display: inline-block;
+          background-image: url("../images/user.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        &-name {
+          display: inline-block;
+          text-transform: uppercase;
+          margin-right: 0.3rem;
+        }
+      }
+    }
+  }
+  &__main {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    &-messages {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-image: url(../images/bg.jpg);
+      background-size: contain;
+      flex-grow: 1;
+      padding: 24px 24px 0 24px;
+      overflow-y: scroll;
+      &--message {
+        margin-bottom: 16px;
+        &-container {
+          padding: 0.3rem 0;
+          &__name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 8px;
+          }
+          &__meta {
+            font-size: 14px;
+            color: $color-soft-grey;
+          }
+        }
+      }
+    }
+    &-speech-bubble {
+      position: relative;
+      background: $color-soft-red;
+      border-radius: 0.4em;
+      padding: 0.5rem 0.3rem;
+      color: #fff;
+      width: fit-content;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 0.969em solid transparent;
+        border-right-color: $color-soft-red;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: -0.484em;
+        margin-left: -0.969em;
+      }
+      &--content {
+        padding: 0 0.3rem;
+      }
+    }
+  }
+  &__compose {
+    background-color: $color-soft-white;
+    display: flex;
+    flex-shrink: 0;
+    padding: 24px;
+    &-form {
+      display: flex;
+      flex-grow: 1;
+      margin-right: 16px;
+      &--input {
+        border: 1px solid #eeeeee;
+        width: 100%;
+        padding: 12px;
+        margin: 0 16px 0 0;
+        flex-grow: 1;
+      }
+    }
+    &-button {
+      font-size: 14px;
+      background-color: $color-darl-red;
+      color: $color-soft-white;
+      padding: 0 1.2rem;
+      border: none;
+      outline: none;
     }
   }
 }
