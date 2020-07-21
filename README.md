@@ -2,7 +2,7 @@
 
 ---
 
-A basic chat React application including a server and client, communicating with Socket.io.
+A basic chat React application including a server and client, communicating with Socket.io.  
 The project is still under construction.
 
 ### `Future features`
