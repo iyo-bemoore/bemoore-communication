@@ -73,22 +73,7 @@ const Chat = ({ location }) => {
         </ul>
       </div>
       <div className="chat__main">
-        <div className="chat__main-messages">
-          {/* <div className="chat__main-messages--message">
-            <p className="chat__main-messages--message-container">
-              <span className="chat__main-messages--message-container__name">
-                imad
-              </span>
-              <span className="chat__main-messages--message-container__meta">
-                today
-              </span>
-            </p>
-            <div className="chat__main-speech-bubble">
-              <p className="chat__main-speech-bubble--content">hello there</p>
-            </div>
-          </div> */}
-          {renderMessages()}
-        </div>
+        <div className="chat__main-messages">{renderMessages()}</div>
         {/* <div className="chat__input"></div> */}
         <div className="chat__compose">
           <form className="chat__compose-form">
